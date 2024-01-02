@@ -31,7 +31,7 @@ function Testimonial({ text, authorName, picture }: Testimonial) {
     <div className="flex flex-col items-center mx-12 lg:mx-0">
       <div className="flex items-center">
         <div className="my-6">
-          <Image
+          <img
             src={imageUrl || ""}
             alt={picture.data.attributes.alternativeText || "none provided"}
             className="inline-block h-32 w-32 rounded-full"

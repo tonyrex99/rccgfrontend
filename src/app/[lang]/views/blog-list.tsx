@@ -72,7 +72,7 @@ export default function PostList({
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg"
             >
               {imageUrl && (
-                <Image
+                <img
                   alt="presentation"
                   width="240"
                   height="240"
@@ -82,7 +82,7 @@ export default function PostList({
               )}
               <div className="p-6 space-y-2 relative">
                 {avatarUrl && (
-                  <Image
+                  <img
                     alt="avatar"
                     width="80"
                     height="80"
