@@ -30,7 +30,7 @@ export async function fetchAPI(
   } catch (error) {
     console.error(error);
     throw new Error(
-      `Please check if your server is running and you set all the required tokens. ${error}`
+      `Please check if your server is running and you set all the required tokens.`
     );
   }
 }

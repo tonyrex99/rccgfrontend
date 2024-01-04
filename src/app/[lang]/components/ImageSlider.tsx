@@ -12,11 +12,17 @@ interface Image {
 }
 
 interface SlidShowProps {
-  picture: {
+  picture?: {
+    data: Image[];
+  };
+  files?: {
     data: Image[];
   };
 }
+
 export default function Slideshow({ data }: { data: SlidShowProps }) {
+  const images = data?.picture?.data || data?.files?.data || [];
+
   return (
     <section
       className={`relative dark:bg-black dark:text-gray-100`}
@@ -39,14 +45,14 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
           arrows={false}
           infinite
         >
-          {data.picture.data.map((fadeImage: Image, index) => {
+          {images.map((fadeImage: Image, index) => {
             const imageUrl = getStrapiMedia(fadeImage.attributes.url);
             return (
               <div key={index} className="w-full  aspect-[2/1] flex">
                 {imageUrl && (
                   <img
                     className="w-full h-full object-cover "
-                    alt="alt text"
+                    alt={fadeImage.attributes.alternativeText || ""}
                     src={imageUrl}
                   />
                 )}
