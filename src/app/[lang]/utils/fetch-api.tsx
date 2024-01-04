@@ -25,10 +25,12 @@ export async function fetchAPI(
     // Trigger API call
     console.log("@@@real request: ", requestUrl);
     const response = await fetch(requestUrl, mergedOptions);
+    console.log("Response Status:", response.status);
+    console.log("Response Headers:", response.headers);
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Fetch Error:", error);
     throw new Error(
       `Please check if your server is running and you set all the required tokens.`
     );
