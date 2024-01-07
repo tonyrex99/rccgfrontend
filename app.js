@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 // Create the Express-Next App
 const app = next({
-  dev: false,
+  dev: true,
 });
 const handle = app.getRequestHandler();
 

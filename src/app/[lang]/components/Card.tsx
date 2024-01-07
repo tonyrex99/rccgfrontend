@@ -2,15 +2,15 @@ import { Picture } from "./Hero";
 import { getStrapiMedia } from "../utils/api-helpers";
 export interface CardProps {
   data: {
-    index: number;
+    id: number;
     title: string;
-    description: string;
-    borderColor: string;
+    description?: string;
+    borderColor?: string;
     borderPosition: string;
-    backgroundImage: Picture;
-    imageOverlay: string;
-    imageOverlayOpacity: string;
-    imagePosition: string;
+    picture: Picture;
+    imageOverlay?: string;
+    imageOverlayOpacity?: string;
+    imagePosition?: string;
   };
 }
 
@@ -32,14 +32,17 @@ function renderBorderPostion(type: string) {
 export default function Card({ data }: CardProps) {
   return (
     <div
-      key={data?.index}
+      key={data?.id + data?.title}
       style={{
         backgroundImage: `url('${getStrapiMedia(
-          data?.backgroundImage?.data?.attributes?.url
+          data?.picture?.data?.attributes?.url
         )}')`,
+        backgroundPosition: data?.imagePosition || "bottom center",
+        backgroundSize: "cover",
+        borderColor: data?.borderColor || "var(--primary-color)",
       }}
       className={` ${renderBorderPostion(data?.borderPosition)} border-[${
-        data?.borderColor || "red"
+        data?.borderColor || "#d95a2a"
       }] relative md:h-[478px] h-[260px]  w-[100%] flex  p-10 items-end `}
     >
       <div

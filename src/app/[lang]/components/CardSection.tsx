@@ -1,17 +1,31 @@
-import Card, { CardProps } from "./Card";
-
-interface CardsWidgetProps {
+import Card from "./Card";
+import { Picture } from "./Hero";
+interface Cards {
   data: {
-    cards: CardProps[];
+    id: number;
+    title: string;
+    description?: string;
+    borderColor?: string;
+    borderPosition: string;
+    picture: Picture;
+    imageOverlay?: string;
+    imageOverlayOpacity?: string;
+    imagePosition?: string;
   };
 }
-/** {data?.cards?.map((card: CardProps, index: number) => (
-        <Card data={{ index: index, ...card }} />
-      ))} */
+interface CardsWidgetProps {
+  data: {
+    cards: Cards[];
+  };
+}
+
+/***/
 function CardsWidget({ data }: CardsWidgetProps) {
   return (
-    <div className="container  self-center relative flex  gap-4 px-4 w-full justify  sm:py-5  flex-col  md:flex-row ">
-      hello
+    <div className="container self-center relative flex gap-4 px-4 w-full justify sm:py-5 flex-col mx-auto my-auto md:flex-row">
+      {data?.cards?.map((card: any) => (
+        <Card data={card} />
+      ))}
     </div>
   );
 }

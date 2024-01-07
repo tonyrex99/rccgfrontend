@@ -4,7 +4,10 @@ import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
 import Email from "../components/Email";
 import ImageSlider from "../components/ImageSlider";
-
+import CardsWidget from "../components/CardSection";
+import SectionTitle from "../components/SectionTitle";
+import VideoEmbedContainer from "../components/VideoEmbedContainer";
+import PageHeaderWithImage from "../components/PageHeaderWithImage";
 export function sectionRenderer(section: any, index: number) {
   switch (section.__component) {
     case "sections.hero":
@@ -19,6 +22,14 @@ export function sectionRenderer(section: any, index: number) {
       return <Pricing key={index} data={section} />;
     case "sections.lead-form":
       return <Email key={index} data={section} />;
+    case "sections.card-section":
+      return <CardsWidget data={section} />;
+    case "sections.section-title":
+      return <SectionTitle data={section} />;
+    case "sections.video-embed-collection":
+      return <VideoEmbedContainer data={section} />;
+    case "sections.page-header-with-image":
+      return <PageHeaderWithImage data={section} />;
     default:
       return null;
   }

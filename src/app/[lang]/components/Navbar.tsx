@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-
+import { Button } from "../utils/model";
+import { renderButtonStyle } from "../utils/render-button-style";
 interface NavLink {
   id: number;
   url: string;
@@ -24,8 +25,8 @@ function NavLink({ url, text }: NavLink) {
     <li className="flex">
       <Link
         href={url}
-        className={`flex items-center px-4 py-2.5 border-b-2 dark:border-transparent font-sans text-lg font-normal ${url} ${path} ${
-          path == "/en" + url && "dark:text-red-400 dark:border-red-400"
+        className={`flex items-center px-4 py-2.5 border-b-2 border-transparent font-sans text-lg font-normal ${url} ${path} ${
+          path == "/en" + url && "text-primary border-primary"
         }}`}
       >
         {text}
@@ -45,7 +46,7 @@ function MobileNavLink({ url, text, closeMenu }: MobileNavLink) {
         href={url}
         onClick={handleClick}
         className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-900 ${
-          path == "/en" + url && "dark:text-violet-400 dark:border-violet-400"
+          path == "/en" + url && "a text-primary a border-primary"
         }}`}
       >
         {text}
@@ -58,8 +59,10 @@ export default function Navbar({
   links,
   logoUrl,
   logoText,
+  button,
 }: {
   links: Array<NavLink>;
+  button: Button;
   logoUrl: string | null;
   logoText: string | null;
 }) {
@@ -77,9 +80,18 @@ export default function Navbar({
 
           <div className="items-center flex-shrink-0 hidden lg:flex">
             <ul className="items-stretch hidden space-x-3 lg:flex">
-              {links.map((item: NavLink) => (
+              {links?.map((item: NavLink) => (
                 <NavLink key={item.id} {...item} />
               ))}
+
+              <Link
+                key={button.id}
+                href={button?.url}
+                target={button?.newTab ? "_blank" : "_self"}
+                className={renderButtonStyle(button?.type)}
+              >
+                <span className="text-[15px] ">{button?.text}</span>
+              </Link>
             </ul>
           </div>
 
@@ -90,10 +102,10 @@ export default function Navbar({
             onClose={setMobileMenuOpen}
           >
             <div className="fixed inset-0 z-50" />
-            <Dialog.Panel className="fixed inset-y-0 rtl:left-0 ltr:right-0 z-50 w-full overflow-y-auto dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <Dialog.Panel className="fixed inset-y-0 rtl:left-0 ltr:right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Strapi</span>
+                  <span className="sr-only">RCCG Providence Court</span>
                   {logoUrl && (
                     <img className="h-8 w-auto" src={logoUrl} alt="" />
                   )}
@@ -122,6 +134,15 @@ export default function Navbar({
               </div>
             </Dialog.Panel>
           </Dialog>
+
+          <Link
+            key={button.id}
+            href={button?.url}
+            target={button?.newTab ? "_blank" : "_self"}
+            className={`lg:hidden ` + renderButtonStyle(button?.type)}
+          >
+            <span className="text-[15px] ">{button?.text}</span>
+          </Link>
           <button
             className="p-4 lg:hidden"
             onClick={() => setMobileMenuOpen(true)}

@@ -1,4 +1,4 @@
 export const FALLBACK_SEO = {
-    title: "Strapi Starter Next Blog",
-    description: "Strapi Starter Next Blog",
-}
+  title: "RCCG Providence Court",
+  description: "Welcome to RCCG Providence Court",
+};
