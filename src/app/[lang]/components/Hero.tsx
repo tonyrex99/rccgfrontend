@@ -60,7 +60,7 @@ export default function Hero({ data }: HeroProps) {
       />
       <div className="container relative flex flex-col justify-center p-6 gap-2 mx-auto sm:py-12 lg:py-24 md:flex-row lg:justify">
         <div
-          className={`sm:order-2 ${
+          className={`sm:order-1 ${
             data?.swapImagePosition ? "md:order-2" : "md:order-1"
           }  flex flex-col justify-center p-6 text-center rounded-lg md:max-w-sm  lg:max-w-md xl:max-w-lg lg:text-left  ${
             data?.swapImagePosition
@@ -93,7 +93,7 @@ export default function Hero({ data }: HeroProps) {
         <div
           className={`${
             data?.swapImagePosition ? "md:order-1" : "md:order-2 "
-          }  sm:order-1 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128`}
+          }  sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128`}
         >
           <img
             src={imgUrl || ""}
