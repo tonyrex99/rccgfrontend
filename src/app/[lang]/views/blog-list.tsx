@@ -77,7 +77,10 @@ export default function PostList({
                   width="240"
                   height="240"
                   className="object-cover w-full h-44 "
-                  src={imageUrl}
+                  src={
+                    imageUrl ||
+                    "https://thumbs.dreamstime.com/z/flat-lay-bible-pink-red-rose-flower-bouquet-white-background-additionally-black-tea-coffee-black-pen-open-147904029.jpg"
+                  }
                 />
               )}
               <div className="p-6 space-y-2 relative">
