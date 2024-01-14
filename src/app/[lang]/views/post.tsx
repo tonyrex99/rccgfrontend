@@ -67,7 +67,7 @@ export default function Post({ data }: { data: Article }) {
                 className="w-14 h-14 border rounded-full dark:bg-gray-500 dark:border-gray-700"
               />
             )}
-            <p className="text-md dark:text-violet-400">
+            <p className="text-md dark:text-secondary">
               {author && author.name} • {formatDate(publishedAt)}
             </p>
           </div>

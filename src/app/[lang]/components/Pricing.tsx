@@ -30,7 +30,7 @@ export default function Pricing({ data }: PriceProps) {
     <section className="py-20 dark:bg-black dark:text-gray-100 m:py-12 lg:py-24">
       <div className="container px-4 mx-auto ">
         <div className="max-w-2xl mx-auto mb-16 text-center">
-          <span className="font-bold tracking-wider uppercase dark:text-violet-400">
+          <span className="font-bold tracking-wider uppercase dark:text-secondary">
             Pricing
           </span>
           <h2 className="text-4xl font-bold lg:text-5xl">{data.title}</h2>
@@ -103,8 +103,8 @@ export default function Pricing({ data }: PriceProps) {
                   type="button"
                   className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                     plan.isRecommended
-                      ? "dark:bg-gray-900 dark:text-violet-400"
-                      : "dark:bg-violet-400 dark:text-gray-900"
+                      ? "dark:bg-gray-900 dark:text-secondary"
+                      : "dark:bg-secondary dark:text-gray-900"
                   }`}
                 >
                   Get Started

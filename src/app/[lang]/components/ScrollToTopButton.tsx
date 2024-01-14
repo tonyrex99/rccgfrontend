@@ -48,14 +48,14 @@ export default function ScrollToTop({ data }: ScrollToTopProps) {
   return (
     <div
       id="myBtn"
-      className={`fixed bottom-7 left-7 p-3 z-50 ${rounded && "rounded"}`}
-      style={{ backgroundColor: "var(--primary-color)" }} // Assuming you have a CSS variable for primary color
+      className={`fixed bottom-7 left-7 p-3 z-50 ${rounded && "rounded-full"}`}
+      style={{ backgroundColor: "var(--secondary-color)" }} // Assuming you have a CSS variable for primary color
       onClick={topFunction}
     >
       <svg
         aria-hidden="true"
         className="kadence-svg-icon kadence-arrow-up2-svg"
-        fill="var(--secondary-color)"
+        fill="var(--primary-color)"
         strokeWidth="2"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

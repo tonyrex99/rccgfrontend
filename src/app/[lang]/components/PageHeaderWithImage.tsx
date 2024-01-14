@@ -35,7 +35,7 @@ const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
     >
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
         {data.text && (
-          <span className="dark:text-violet-400 font-bold">{data.text}</span>
+          <span className="dark:text-secondary font-bold">{data.text}</span>
         )}
         <h2 className="text-4xl my-4 lg:text-5xl font-bold font-heading">
           {data.heading}
