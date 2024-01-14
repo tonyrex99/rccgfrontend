@@ -71,18 +71,17 @@ export default function PostList({
               key={article.id}
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg"
             >
-              {imageUrl && (
-                <img
-                  alt="presentation"
-                  width="240"
-                  height="240"
-                  className="object-cover w-full h-44 "
-                  src={
-                    imageUrl ||
-                    "https://thumbs.dreamstime.com/z/flat-lay-bible-pink-red-rose-flower-bouquet-white-background-additionally-black-tea-coffee-black-pen-open-147904029.jpg"
-                  }
-                />
-              )}
+              <img
+                alt="presentation"
+                width="240"
+                height="240"
+                className="object-cover w-full h-44 "
+                src={
+                  imageUrl ||
+                  "https://thumbs.dreamstime.com/z/flat-lay-bible-pink-red-rose-flower-bouquet-white-background-additionally-black-tea-coffee-black-pen-open-147904029.jpg"
+                }
+              />
+
               <div className="p-6 space-y-2 relative">
                 {avatarUrl && (
                   <img
