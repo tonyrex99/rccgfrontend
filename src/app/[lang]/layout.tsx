@@ -48,6 +48,10 @@ async function getGlobal(lang: string): Promise<any> {
       "footer.legalLinks",
       "footer.socialLinks",
       "footer.categories",
+      "footer.ContactUs",
+      "footer.BackgroundEffect",
+      "footer.BackgroundEffect.picture",
+      "footer.greeting",
       "ScrollToTop.show",
       "ScrollToTop.rounded",
     ],
@@ -99,7 +103,9 @@ export default async function RootLayout({
   const footerLogoUrl = getStrapiMedia(
     footer.footerLogo.logoImg.data.attributes.url
   );
-
+  const footerBackgroundEffectPictureUrl = getStrapiMedia(
+    footer.BackgroundEffect.picture.data.attributes.url
+  );
   return (
     <html lang={params.lang}>
       <head>
@@ -133,6 +139,12 @@ export default async function RootLayout({
           categoryLinks={footer.categories.data}
           legalLinks={footer.legalLinks}
           socialLinks={footer.socialLinks}
+          ContactUs={footer.ContactUs}
+          BackgroundEffect={{
+            ...footer.BackgroundEffect,
+            picture: footerBackgroundEffectPictureUrl,
+          }}
+          greeting={footer.greeting}
         />
       </body>
     </html>

@@ -46,7 +46,10 @@ const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
 };
 
 // Helper function to convert hex color to RGB
-const hexToRgb = (hex: string): string => {
+export const hexToRgb = (hex: string): string => {
+  if (!hex) {
+    return "";
+  }
   const bigint = parseInt(hex.slice(1), 16);
   const r = (bigint >> 16) & 255;
   const g = (bigint >> 8) & 255;
