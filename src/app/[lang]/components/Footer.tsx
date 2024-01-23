@@ -163,14 +163,14 @@ export default function Footer({
           <div className="col-span-6 text-center md:text-left md:col-span-4 mx-auto">
             <p className="pb-1 text-lg font-medium">Quick Links</p>
             <ul>
-              {menuLinks.slice(1, 5).map(
+              {menuLinks.map(
                 (
                   link: FooterLink,
                   index: number //remove slice
                 ) => (
                   <>
                     <FooterLink key={link.id} {...link} />
-                    {index !== menuLinks.slice(1, 5).length - 1 && (
+                    {index !== menuLinks.length - 1 && (
                       <div className="border-t border-gray-300 flex-grow"></div>
                     )}
                   </>
