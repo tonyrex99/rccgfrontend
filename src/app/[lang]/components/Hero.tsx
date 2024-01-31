@@ -70,7 +70,7 @@ export default function Hero({ data }: HeroProps) {
           <HighlightedText
             text={data?.title}
             classNames="text-4xl font-bold leading-none mb-8  "
-            color={`dark:text-secondary ${getContrastColor(
+            color={`dark:text-secondary text-${getContrastColor(
               data?.bgImageOverlay
             )} `}
           />
@@ -78,7 +78,9 @@ export default function Hero({ data }: HeroProps) {
           <HighlightedText
             text={data?.description}
             classNames="tmt-6 mb-8  sm:mb-12"
-            color={`dark:text-white ${getContrastColor(data?.bgImageOverlay)} `}
+            color={`dark:text-white text-${getContrastColor(
+              data?.bgImageOverlay
+            )} `}
           />
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             {data?.buttons?.map((button: Button, index: number) => (
