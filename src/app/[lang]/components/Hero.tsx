@@ -78,9 +78,7 @@ export default function Hero({ data }: HeroProps) {
           <HighlightedText
             text={data?.description}
             classNames="tmt-6 mb-8  sm:mb-12"
-            color={`dark:text-white text-${getContrastColor(
-              data?.bgImageOverlay
-            )} `}
+            color={` text-${getContrastColor(data?.bgImageOverlay)} `}
           />
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             {data?.buttons?.map((button: Button, index: number) => (
