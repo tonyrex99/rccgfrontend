@@ -3,6 +3,7 @@ import Image from "next/image";
 import HighlightedText from "./HighlightedText";
 import { getStrapiMedia } from "../utils/api-helpers";
 import { renderButtonStyle } from "../utils/render-button-style";
+import { getContrastColor } from "../utils/text-color-finder";
 interface Button {
   id: string;
   url: string;
@@ -69,13 +70,15 @@ export default function Hero({ data }: HeroProps) {
           <HighlightedText
             text={data?.title}
             classNames="text-4xl font-bold leading-none mb-8  "
-            color="dark:text-secondary"
+            color={`dark:text-secondary ${getContrastColor(
+              data?.bgImageOverlay
+            )} `}
           />
 
           <HighlightedText
             text={data?.description}
             classNames="tmt-6 mb-8  sm:mb-12"
-            color="dark:text-secondary"
+            color={`dark:text-white ${getContrastColor(data?.bgImageOverlay)} `}
           />
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             {data?.buttons?.map((button: Button, index: number) => (
@@ -93,14 +96,12 @@ export default function Hero({ data }: HeroProps) {
         <div
           className={`${
             data?.swapImagePosition ? "md:order-1" : "md:order-2 "
-          }  sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128`}
+          }  sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 flex-grow`}
         >
           <img
             src={imgUrl || ""}
             alt={data?.picture?.data?.attributes?.alternativeText || ""}
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 "
-            width={600}
-            height={600}
+            className="object-contain w-full h-full"
           />
         </div>
       </div>
