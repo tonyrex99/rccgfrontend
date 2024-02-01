@@ -81,9 +81,8 @@ export default function Hero({ data }: HeroProps) {
             text={data?.description}
             classNames={`tmt-6 mb-8  sm:mb-12 `}
             style={{
-              color: data?.bgImageOverlay
-                ? getContrastColor(data?.bgImageOverlay)
-                : "black",
+              color:
+                data?.bgImageOverlay && getContrastColor(data?.bgImageOverlay),
             }}
             color={`dark:text-${
               data?.bgImageOverlay
