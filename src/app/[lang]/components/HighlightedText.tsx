@@ -2,12 +2,14 @@ interface HighlightedTextProps {
   text: string;
   classNames?: string;
   color?: string;
+  style?: object;
 }
 
 export default function HighlightedText({
   text,
   classNames,
   color,
+  style,
 }: HighlightedTextProps) {
   /**
   const tempText = text.split(" ");
@@ -29,6 +31,7 @@ export default function HighlightedText({
   return (
     <div
       className={classNames + " " + color}
+      style={style}
       dangerouslySetInnerHTML={{ __html: text }}
     />
   );
