@@ -110,7 +110,7 @@ export default function Hero({ data }: HeroProps) {
         <div
           className={`${
             data?.swapImagePosition ? "md:order-1" : "md:order-2 "
-          }   sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 flex-grow w-1/2 md:w-1/2 md:h-full`}
+          }   sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128  w-1/2 md:w-1/2 md:h-full`}
         >
           <img
             src={imgUrl || ""}
