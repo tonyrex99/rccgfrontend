@@ -8,6 +8,7 @@ import CardsWidget from "../components/CardSection";
 import SectionTitle from "../components/SectionTitle";
 import VideoEmbedContainer from "../components/VideoEmbedContainer";
 import PageHeaderWithImage from "../components/PageHeaderWithImage";
+import TestimonyForm from "../components/testimonyForm";
 export function sectionRenderer(section: any, index: number) {
   switch (section.__component) {
     case "sections.hero":
@@ -30,6 +31,9 @@ export function sectionRenderer(section: any, index: number) {
       return <VideoEmbedContainer data={section} />;
     case "sections.page-header-with-image":
       return <PageHeaderWithImage data={section} />;
+    case "sections.testimonyform":
+      return <TestimonyForm />;
+
     default:
       return null;
   }

@@ -131,6 +131,7 @@ export default async function RootLayout({
             data={{ show: ScrollToTop.show, rounded: ScrollToTop.rounded }}
           />
         )}
+
         <Banner data={notificationBanner} />
         <Footer
           logoUrl={footerLogoUrl}
