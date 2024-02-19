@@ -24,8 +24,6 @@ const TestimonyForm: React.FC = () => {
     }));
   };
 
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -34,7 +32,7 @@ const TestimonyForm: React.FC = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
         },
         body: JSON.stringify({ data: formData }),
       });
