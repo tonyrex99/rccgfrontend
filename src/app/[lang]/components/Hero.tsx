@@ -50,7 +50,7 @@ export default function Hero({ data }: HeroProps) {
       }}
       className={`dark:bg-black dark:text-gray-100 relative    ${
         data?.backgroundImageIsFixed && `bg-fixed`
-      } inset-0 bg-cover bg-center`}
+      } inset-0 bg-cover bg-center `}
     >
       <div
         style={{
@@ -59,11 +59,11 @@ export default function Hero({ data }: HeroProps) {
         }}
         className={` absolute inset-0  w-full h-full  flex`}
       />
-      <div className="container relative flex flex-col justify-center p-6 gap-2 mx-auto sm:py-12 lg:py-24 md:flex-row lg:justify">
+      <div className="container relative flex flex-col xjustify-center p-6 gap-2 mx-auto xsm:py-12 xlg:py-24 md:flex-row xlg:justify items-center justify-between py-12">
         <div
-          className={`sm:order-1 ${
-            data?.swapImagePosition ? "md:order-2" : "md:order-1"
-          }  flex flex-col justify-center p-6 text-center rounded-lg md:max-w-sm  lg:max-w-md xl:max-w-lg lg:text-left w-full md:w-1/2  ${
+          className={`sm:order-2 ${
+            data?.swapImagePosition ? "md:order-2" : "md:order-1 "
+          }  flex flex-col justify-center p-6 text-center rounded-lg xmd:max-w-sm  lg:max-w-md xl:max-w-lg lg:text-left xw-full w-[73.5%] xmd:w-1/2 ${" "}${
             data?.swapImagePosition
           } `}
         >
@@ -110,12 +110,12 @@ export default function Hero({ data }: HeroProps) {
         <div
           className={`${
             data?.swapImagePosition ? "md:order-1" : "md:order-2 "
-          }   sm:order-2 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128  w-1/2 md:w-1/2 md:h-full`}
+          }   sm:order-1 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128  `}
         >
           <img
             src={imgUrl || ""}
             alt={data?.picture?.data?.attributes?.alternativeText || ""}
-            className="object-contain w-full h-full md:h-auto"
+            className="object-contain ah-72 h-full w-full asm:h-80 alg:h-96 xl:h-112 2xl:h-128 xw-full xh-full xmd:h-auto"
           />
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
   const images = data?.picture?.data || data?.files?.data || [];
 
   return (
-    <section className=" dark:bg-black dark:text-gray-100 relative">
+    <section className=" dark:bg-black dark:text-gray-100 relative min-h-[300px]">
       {/* Red Overlay */}
       <div
         style={{
@@ -46,10 +46,10 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
         className={`absolute top-0 left-0 w-full h-full  z-[1]`}
       ></div>
       {/* Text Overlay */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[1] ">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[1] w-full ">
         <div
           style={{ color: data?.overlay?.contentColor }}
-          className={`text-white text-4xl font-bold my-9`}
+          className={`text-white text-3xl md:text-4xl font-bold my-9`}
         >
           {data?.overlay?.content}
         </div>
@@ -75,7 +75,7 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
               <div key={index} className="w-full aspect-[2/1] relative">
                 {imageUrl && (
                   <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-full min-h-[400px] object-cover"
                     alt={fadeImage.attributes.alternativeText || ""}
                     src={imageUrl}
                   />
