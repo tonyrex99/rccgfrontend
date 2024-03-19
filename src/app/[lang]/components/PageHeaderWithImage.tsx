@@ -15,7 +15,7 @@ interface PageHeaderWithImageProps {
 
 const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
   const imgUrl = getStrapiMedia(data?.picture?.data?.attributes?.url);
-  const JSONObject: any = JSON.parse(data?.additionalStyles);
+  const JSONObject: any = data?.additionalStyles;
 
   const containerStyle = {
     background: `${
@@ -29,7 +29,7 @@ const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
 
   return (
     <div
-      className={`relative h-[300px] md:h-[500px]  ${JSONObject?.pageHeaderWithImage}`}
+      className={`relative h-[300px] md:h-[500px]  ${JSONObject?.pageHeaderWithImage} `}
       style={{
         ...containerStyle,
         backgroundAttachment: data.isImageFixed ? "fixed " : "",

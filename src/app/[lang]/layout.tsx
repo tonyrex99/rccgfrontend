@@ -106,6 +106,7 @@ export default async function RootLayout({
   const footerBackgroundEffectPictureUrl = getStrapiMedia(
     footer.BackgroundEffect.picture.data.attributes.url
   );
+
   return (
     <html lang={params.lang}>
       <head>

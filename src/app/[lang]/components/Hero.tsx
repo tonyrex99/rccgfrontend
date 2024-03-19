@@ -41,7 +41,7 @@ interface HeroProps {
 
 export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data?.picture?.data?.attributes?.url);
-  const JSONObject: any = JSON.parse(data?.additionalStyles);
+  const JSONObject: any = data?.additionalStyles;
 
   return (
     <section
@@ -51,10 +51,10 @@ export default function Hero({ data }: HeroProps) {
         )}')`,
       }}
       className={`dark:bg-black dark:text-gray-100 relative    ${
-        data?.backgroundImageIsFixed && `bg-fixed`
-      } inset-0 bg-cover bg-center ${JSONObject?.hero} ${
-        JSONObject?.backgroundImage
-      }`}
+        data?.backgroundImageIsFixed && ` bg-fixed `
+      } flex items-center inset-0 bg-cover bg-center md:bg-top  ${
+        JSONObject?.hero
+      }  ${JSONObject?.backgroundImage}  `}
     >
       <div
         style={{
@@ -69,7 +69,7 @@ export default function Hero({ data }: HeroProps) {
             data?.swapImagePosition ? "md:order-2" : "md:order-1 "
           }  flex flex-col justify-center p-6 text-center rounded-lg xmd:max-w-sm  lg:max-w-md xl:max-w-lg lg:text-left xw-full w-[73.5%] xmd:w-1/2 ${" "}${
             data?.swapImagePosition
-          } ${JSONObject?.heroText} `}
+          } ${JSONObject?.heroText}   "`}
         >
           <HighlightedText
             text={data?.title}

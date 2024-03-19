@@ -53,7 +53,7 @@ function FooterLink({ url, text }: FooterLink) {
   const path = usePathname();
   return (
     <>
-      <li className="flex py-3">
+      <li className="flex py-3" key={text}>
         <Link
           href={url}
           className={`hover:dark:text-secondary ${
@@ -184,7 +184,7 @@ export default function Footer({
               {ContactUs &&
                 ContactUs.map((links: ContactUs, index: number) => (
                   <>
-                    <li className="flex py-3">
+                    <li className="flex py-3" key={links.description + index}>
                       <div className="flex flex-row items-center gap-1">
                         <IconContext.Provider
                           value={{
@@ -205,7 +205,7 @@ export default function Footer({
                 {socialLinks.map((link: FooterLink) => {
                   return (
                     <a
-                      key={link.id}
+                      key={link.id + link.url}
                       rel="noopener noreferrer"
                       href={link.url}
                       title={link.text}
@@ -237,7 +237,7 @@ export default function Footer({
                 <Link
                   href={link.url}
                   className="text-gray-400 hover:text-gray-300 mr-2"
-                  key={link.id}
+                  key={link.id + link.url}
                 >
                   {link.text}
                 </Link>
@@ -248,7 +248,7 @@ export default function Footer({
             {socialLinks.map((link: FooterLink) => {
               return (
                 <a
-                  key={link.id}
+                  key={link.id + link.url}
                   rel="noopener noreferrer"
                   href={link.url}
                   title={link.text}

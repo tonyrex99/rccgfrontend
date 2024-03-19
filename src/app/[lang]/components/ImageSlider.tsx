@@ -41,7 +41,9 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
       <div
         style={{
           backgroundColor: data?.overlay?.color,
-          opacity: data?.overlay?.colorOpacity / 100,
+          opacity: data?.overlay?.colorOpacity
+            ? Number(data?.overlay?.colorOpacity) / 100
+            : "",
         }}
         className={`absolute top-0 left-0 w-full h-full  z-[1]`}
       ></div>
