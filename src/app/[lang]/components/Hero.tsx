@@ -35,11 +35,13 @@ interface HeroProps {
     picture: Picture;
     backgroundImage: Picture;
     buttons: Button[];
+    additionalStyles: string;
   };
 }
 
 export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data?.picture?.data?.attributes?.url);
+  const JSONObject: any = JSON.parse(data?.additionalStyles);
 
   return (
     <section
@@ -50,7 +52,9 @@ export default function Hero({ data }: HeroProps) {
       }}
       className={`dark:bg-black dark:text-gray-100 relative    ${
         data?.backgroundImageIsFixed && `bg-fixed`
-      } inset-0 bg-cover bg-center `}
+      } inset-0 bg-cover bg-center ${JSONObject?.hero} ${
+        JSONObject?.backgroundImage
+      }`}
     >
       <div
         style={{
@@ -65,11 +69,11 @@ export default function Hero({ data }: HeroProps) {
             data?.swapImagePosition ? "md:order-2" : "md:order-1 "
           }  flex flex-col justify-center p-6 text-center rounded-lg xmd:max-w-sm  lg:max-w-md xl:max-w-lg lg:text-left xw-full w-[73.5%] xmd:w-1/2 ${" "}${
             data?.swapImagePosition
-          } `}
+          } ${JSONObject?.heroText} `}
         >
           <HighlightedText
             text={data?.title}
-            classNames="text-4xl font-bold leading-none mb-8  "
+            classNames={`text-4xl font-bold leading-none mb-8   ${JSONObject?.heroTitle}`}
             color={`dark:text-secondary text-${
               data?.bgImageOverlay
                 ? getContrastColor(data?.bgImageOverlay)
@@ -79,7 +83,7 @@ export default function Hero({ data }: HeroProps) {
 
           <HighlightedText
             text={data?.description}
-            classNames={`tmt-6 mb-8  sm:mb-12 `}
+            classNames={`tmt-6 mb-8  sm:mb-12  ${JSONObject?.heroDescription}`}
             style={{
               color:
                 data?.bgImageOverlay && getContrastColor(data?.bgImageOverlay),
@@ -110,7 +114,9 @@ export default function Hero({ data }: HeroProps) {
         <div
           className={`${
             data?.swapImagePosition ? "md:order-1" : "md:order-2 "
-          }   sm:order-1 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128  `}
+          }   sm:order-1 flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128  ${
+            JSONObject?.heroImage
+          } `}
         >
           <img
             src={imgUrl || ""}

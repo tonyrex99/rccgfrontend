@@ -9,11 +9,13 @@ interface PageHeaderWithImageProps {
     overlayColor: string;
     overlayOpacity: number;
     isImageFixed: boolean;
+    additionalStyles: string;
   };
 }
 
 const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
   const imgUrl = getStrapiMedia(data?.picture?.data?.attributes?.url);
+  const JSONObject: any = JSON.parse(data?.additionalStyles);
 
   const containerStyle = {
     background: `${
@@ -27,10 +29,11 @@ const PageHeaderWithImage = ({ data }: PageHeaderWithImageProps) => {
 
   return (
     <div
-      className="relative h-[300px] md:h-[500px]"
+      className={`relative h-[300px] md:h-[500px]  ${JSONObject?.pageHeaderWithImage}`}
       style={{
         ...containerStyle,
         backgroundAttachment: data.isImageFixed ? "fixed " : "",
+        ...JSONObject?.imageStyle,
       }}
     >
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white">

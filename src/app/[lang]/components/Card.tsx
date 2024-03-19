@@ -11,6 +11,7 @@ export interface CardProps {
     imageOverlay?: string;
     imageOverlayOpacity?: string;
     imagePosition?: string;
+    additionalStyles: string;
   };
 }
 
@@ -30,6 +31,8 @@ function renderBorderPostion(type: string) {
   }
 }
 export default function Card({ data }: CardProps) {
+  const JSONObject: any = JSON.parse(data?.additionalStyles);
+
   return (
     <div
       key={data?.id + data?.title}
@@ -43,7 +46,9 @@ export default function Card({ data }: CardProps) {
       }}
       className={` ${renderBorderPostion(data?.borderPosition)} border-[${
         data?.borderColor || "#d95a2a"
-      }] relative md:h-[478px] h-[260px]  w-[100%] flex  p-10 items-end `}
+      }] relative md:h-[478px] h-[260px]  w-[100%] flex  p-10 items-end   ${
+        JSONObject?.card
+      }`}
     >
       <div
         style={{
