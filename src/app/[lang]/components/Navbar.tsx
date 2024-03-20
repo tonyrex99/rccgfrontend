@@ -7,6 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Button } from "../utils/model";
 import { renderButtonStyle } from "../utils/render-button-style";
+import Image from "next/image";
 interface NavLink {
   id: number;
   url: string;
@@ -107,7 +108,13 @@ export default function Navbar({
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">RCCG Providence Court</span>
                   {logoUrl && (
-                    <img className="h-8 w-auto" src={logoUrl} alt="" />
+                    <Image
+                      className="h-8 w-auto"
+                      src={logoUrl}
+                      alt=""
+                      width={600}
+                      height={600}
+                    />
                   )}
                 </a>
                 <button

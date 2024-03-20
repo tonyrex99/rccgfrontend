@@ -119,10 +119,12 @@ export default function Hero({ data }: HeroProps) {
           } `}
         >
           {imgUrl && (
-            <img
+            <Image
               src={imgUrl || ""}
               alt={data?.picture?.data?.attributes?.alternativeText || ""}
               className="object-contain ah-72 h-full w-full asm:h-80 alg:h-96 xl:h-112 2xl:h-128 xw-full xh-full xmd:h-auto"
+              width={600}
+              height={600}
             />
           )}
         </div>

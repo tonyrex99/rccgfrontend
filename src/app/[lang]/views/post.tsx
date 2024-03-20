@@ -46,7 +46,7 @@ export default function Post({ data }: { data: Article }) {
   return (
     <article className="space-y-8 dark:bg-black dark:text-gray-50">
       {imageUrl && (
-        <img
+        <Image
           src={imageUrl}
           alt="article cover image"
           width={400}
@@ -59,7 +59,7 @@ export default function Post({ data }: { data: Article }) {
         <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
           <div className="flex items-center md:space-x-2">
             {authorImgUrl && (
-              <img
+              <Image
                 src={authorImgUrl}
                 alt="article cover image"
                 width={400}

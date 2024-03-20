@@ -71,10 +71,10 @@ export default function PostList({
               key={article.id}
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg"
             >
-              <img
+              <Image
                 alt="presentation"
-                width="240"
-                height="240"
+                width={240}
+                height={240}
                 className="object-cover w-full h-44 "
                 src={
                   imageUrl ||
@@ -84,10 +84,10 @@ export default function PostList({
 
               <div className="p-6 space-y-2 relative">
                 {avatarUrl && (
-                  <img
+                  <Image
                     alt="avatar"
-                    width="80"
-                    height="80"
+                    width={80}
+                    height={80}
                     src={avatarUrl}
                     className="rounded-full h-16 w-16 object-cover absolute -top-8 right-4"
                   />

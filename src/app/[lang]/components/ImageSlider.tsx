@@ -4,6 +4,7 @@ import { getStrapiMedia } from "../utils/api-helpers";
 import Link from "next/link";
 import { renderButtonStyle } from "../utils/render-button-style";
 import { Button } from "../utils/model";
+import Image from "next/image";
 interface Image {
   id: number;
   attributes: {
@@ -76,10 +77,12 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
             return (
               <div key={index} className="w-full aspect-[2/1] relative">
                 {imageUrl && (
-                  <img
+                  <Image
                     className="w-full h-full min-h-[400px] object-cover"
                     alt={fadeImage.attributes.alternativeText || ""}
                     src={imageUrl}
+                    width={600}
+                    height={600}
                   />
                 )}
               </div>
