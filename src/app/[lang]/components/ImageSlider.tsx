@@ -81,8 +81,8 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
                     className="w-full h-full min-h-[400px] object-cover"
                     alt={fadeImage.attributes.alternativeText || ""}
                     src={imageUrl}
-                    width={600}
-                    height={600}
+                    width={1920}
+                    height={1080}
                   />
                 )}
               </div>
