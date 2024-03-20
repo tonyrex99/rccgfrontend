@@ -139,7 +139,11 @@ export default function Navbar({
             key={button.id}
             href={button?.url}
             target={button?.newTab ? "_blank" : "_self"}
-            className={`lg:hidden ` + renderButtonStyle(button?.type)}
+            className={
+              `lg:hidden   flex items-center self-center ` +
+              renderButtonStyle(button?.type) +
+              " py-3 px-4"
+            }
           >
             <span className="text-[15px] ">{button?.text}</span>
           </Link>

@@ -12,6 +12,7 @@ import {
 } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 import { hexToRgb } from "./PageHeaderWithImage";
 import { Picture } from "../utils/model";
 import IconComponent from "./IconComponent";
@@ -87,7 +88,7 @@ function RenderSocialIcon({ social }: { social: string | undefined }) {
     case "WEBSITE":
       return <CgWebsite />;
     case "TWITTER":
-      return <AiOutlineTwitter />;
+      return <BsTwitterX />;
     case "YOUTUBE":
       return <AiFillYoutube />;
     case "DISCORD":
